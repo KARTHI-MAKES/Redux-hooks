@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:global(*) {
+  box-sizing: border-box;
+}
+
+:global(:root) {
+  font-family: 'DM Sans', sans-serif;
+  color: #25312d;
+  background: #e9eee8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+:global(body) {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e9eee8, #f8f5ed 55%, #e6eee9);
+}
+
+:global(button),
+:global(input) {
+  font: inherit;
+}
+
+:global(button) {
+  cursor: pointer;
+}
+
+.appShell { min-height: 100vh; display: grid; place-items: center; padding: 48px 20px 28px; }
+.todoCard { width: min(100%, 700px); padding: clamp(28px, 6vw, 64px); border: 1px solid rgba(67, 89, 77, .15); border-radius: 18px; background: rgba(255, 255, 252, .83); box-shadow: 0 24px 70px rgba(60, 78, 66, .13); }
+.eyebrow { color: #66846d; font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.headingRow { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-top: 14px; }
+.headingRow h1, .listHeading h2, .intro, .emptyState p { margin: 0; }
+.headingRow h1 { max-width: 470px; color: #23352d; font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.04; }
+.intro { max-width: 390px; margin-top: 16px; color: #718078; line-height: 1.6; }
+.todoCount { color: #f8f5ed; background: #66846d; border-radius: 50%; display: grid; flex: 0 0 54px; height: 54px; place-items: center; font-size: .9rem; font-weight: 700; }
+.todoForm { margin-top: 42px; }
+.todoForm label { display: block; margin-bottom: 10px; color: #5f7067; font-size: .85rem; font-weight: 700; }
+.inputRow { display: flex; gap: 10px; }
+.inputRow input { width: 100%; min-width: 0; border: 1px solid #d6dfd5; border-radius: 9px; padding: 14px 16px; color: #25312d; background: #fff; outline: none; transition: border-color 160ms, box-shadow 160ms; }
+.inputRow input:focus { border-color: #66846d; box-shadow: 0 0 0 3px rgba(102, 132, 109, .15); }
+.inputRow button { border: 0; border-radius: 4px; padding: 0 18px; color: #fff; background: #315a47; font-weight: 700; white-space: nowrap; transition: background 160ms, transform 160ms; }
+.inputRow button:hover { background: #244936; }
+.inputRow button:active { transform: translateY(1px); }
+.inputRow button span { margin-left: 7px; font-size: 1.2rem; font-weight: 400; }
+.errorMessage { margin-top: 8px; color: #b34d48; font-size: .8rem; }
+.listHeading { display: flex; align-items: center; justify-content: space-between; margin-top: 48px; padding-bottom: 14px; border-bottom: 1px solid #dce4da; }
+.listHeading h2 { color: #344a3d; font-size: 1.1rem; }
+.listHeading span { color: #8a9790; font-size: .8rem; }
+.todoList { display: grid; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
+.todoItem { display: flex; align-items: center; gap: 13px; min-height: 56px; padding: 8px 10px 8px 14px; border: 1px solid #e3e9e1; border-radius: 10px; background: rgba(255, 255, 255, .7); }
+.taskMark { width: 10px; height: 10px; border: 2px solid #87a28c; border-radius: 50%; flex: 0 0 10px; }
+.taskTitle { flex: 1; overflow-wrap: anywhere; }
+.removeButton { border: 0; padding: 8px 10px; color: #9b5c56; background: transparent; font-size: .8rem; }
+.removeButton:hover { color: #fff; background: #9b5c56; }
+.emptyState { display: grid; place-items: center; gap: 8px; padding: 42px 20px 26px; color: #8a9790; text-align: center; }
+.emptyState p { color: #51665a; font-weight: 700; }
+.emptyIcon { display: grid; width: 38px; height: 38px; margin-bottom: 5px; place-items: center; border-radius: 50%; color: #66846d; background: #e1ece1; }
+.footer { margin-top: 20px; color: #839188; font-size: .75rem; }
+
+@media (max-width: 520px) {
+  .appShell { padding: 20px 12px; }
+  .headingRow { gap: 12px; }
+  .todoCount { flex-basis: 44px; height: 44px; }
+  .inputRow { display: grid; }
+  .inputRow button { min-height: 48px; }
+  .todoItem { align-items: flex-start; }
+  .removeButton { margin-left: auto; }
+}
